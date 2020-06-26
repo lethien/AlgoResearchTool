@@ -1,0 +1,24 @@
+currency,symbol,code
+Australian Dollar,AUD,DEXUSAL
+Brazilian Real,BRL,DEXBZUS
+British Pound,GBP,DEXUSUK
+Canadaian Dollar,CAD,DEXCAUS
+Chinese Yuan,CNY,DEXCHUS
+Denish Krone,DKK,DEXDNUS
+Euro,EUR,DEXUSEU
+Hong Kong Dollar,HKD,DEXHKUS
+Indian Rupee,INR,DEXINUS
+Japanese Yen,JPY,DEXJPUS
+Malaysian Ringgit,MYR,DEXMAUS
+Mexican Peso,MXN,DEXMXUS
+New Taiwan Dollar,TWD,DEXTAUS
+New Zealand Dollar,NZD,DEXUSNZ
+Norwegian Krone,NOK,DEXNOUS
+Singapore Dollar,SGD,DEXSIUS
+South African Rand,ZAR,DEXSFUS
+South Korean Won,KRW,DEXKOUS
+Sri Lankan Rupee,LKR,DEXSLUS
+Swedish Krona,SEK,DEXSDUS
+Swiss Franc,CHF,DEXSZUS
+Thai Baht,THB,DEXTHUS
+Venezuelan Bolivar,VEF,DEXVZUS

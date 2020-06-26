@@ -1,0 +1,21 @@
+name,description,dataset,code
+Gold,COMEX Gold Futures,CHRIS,CME_GC1
+Silver,COMEX Silver Futures,CHRIS,CME_SI1
+Platinum,NYMEX Platinum Futures,CHRIS,CME_PL1
+Palladium,NYMEX Palladium Futures,CHRIS,CME_PA1
+Copper,COMEX Copper Futures,CHRIS,CME_HG1
+Corn,CBOT Corn Futures,CHRIS,CME_C1
+Oats,CBOT Oats Futures,CHRIS,CME_O1
+Rice,CBOT Rice Futures,CHRIS,CME_RR1
+Soybean,CBOT Soybean Futures,CHRIS,CME_S1
+Soybean Meal,CBOT Soybean Meal Futures,CHRIS,CME_SM1
+Soybean Oil,CBOT Soybean Oil Futures,CHRIS,CME_BO1
+Wheat,CBOT Wheat Futures,CHRIS,CME_W1
+Dairy,CME Milk Futures,CHRIS,CME_DA1
+Cattle Live,CME Live Cattle Futures,CHRIS,CME_LC1
+Cattle Feeder,CME Feeder Cattle Futures,CHRIS,CME_FC1
+Pork,CME Lean Hog Futures,CHRIS,CME_LN1
+Gasoline,NYMEX RBOB Gasoline Futures,CHRIS,CME_RB1
+Crude Oil,NYMEX Crude Oil Futures,CHRIS,CME_CL1
+Natural Gas,NYMEX Natural Gas Futures,CHRIS,CME_NG1
+Lumber,Lumber Futures,CHRIS,CME_LB1
