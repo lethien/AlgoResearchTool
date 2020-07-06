@@ -45,6 +45,12 @@ def get_commodity_code(commodity_name):
     code = commodities[commodities['name'] == commodity_name].iloc[0]['code']
     return code
 
+def get_commodity_name(commodity_code):    
+    commodities_meta_data_file = os.path.join(get_datadownloader_dir(), 'data', 'meta-data', 'commodities_code.csv')
+    commodities = pd.read_csv(commodities_meta_data_file)    
+    name = commodities[commodities['code'] == commodity_code].iloc[0]['name']
+    return name
+
 def get_datadownloader_dir():
     current_file_dir = get_current_file_dir()
     return os.path.join(current_file_dir, '..')

@@ -1,2 +1,3 @@
 service,key
-Quandl,<YOUR-API-KEY-HERE>
+Quandl,YOUR-KEY-HERE
+AlphaVantage,YOUR-KEY-HERE

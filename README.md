@@ -2,12 +2,11 @@
 
 Personal tool for researching Algo Trading
 
-Components:  
+Components: 
+- accountmanager 
 - datadownloader   
-- tradingsignalgenerator  
+- signalgenerator  
 - orderexecutor  
-- backtester   
-- tradingstrategy  
 
 datadownloader may require some api key of datasources.  
 Fill datadownloader/data/meta-data/api-key.csv with own keys.

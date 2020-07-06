@@ -57,7 +57,7 @@ def parse_data_column(data_column):
                 data_val = None
             data_values.append(data_val)
 
-    data_parsed = pd.DataFrame({'Date Time': data_dates, field_name: data_values})
+    data_parsed = pd.DataFrame({'Date': data_dates, field_name: data_values})
     return data_parsed
 
 def parse_data(data):
@@ -71,6 +71,6 @@ def parse_data(data):
     # Merge all into one data frame
     dataframe = data_dfs[0]
     for i in range(1, len(data_dfs)):
-        dataframe = pd.merge(dataframe, data_dfs[i], on='Date Time', how='outer')
+        dataframe = pd.merge(dataframe, data_dfs[i], on='Date', how='outer')
     
-    return dataframe.set_index('Date Time')
+    return dataframe.set_index('Date')
