@@ -10,6 +10,9 @@ class Porfolio:
         self.__value_history = []
         self.__trading_history = []
         
+    def get_current_capital(self):
+        return self.__capital
+
     def __calculate_current_total_value(self, assets_current_price_dict):
         capital_value = self.__capital
 
@@ -33,7 +36,7 @@ class Porfolio:
         return df.sort_index(ascending=True)
     
     def get_tickers_in_porfolio(self):
-        tickers = [(k, v) for (k, v) in self.__holding.items()]
+        tickers = self.__holding.items()
         
         return pd.DataFrame(data=tickers)
     

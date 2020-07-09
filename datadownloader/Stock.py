@@ -17,8 +17,8 @@ class Stock:
         self.__income_statement_freq = None
         self.__cash_flow_statement_freq =None
         self.__financial_ratios_freq = None
-        self.__funcdamental_data = None
-        self.__funcdamental_data_freq = None
+        self.__fundamental_data = None
+        self.__fundamental_data_freq = None
     
     def get_history(self, freq='daily'):
         if self.__history is None or self.__frequency != freq:
@@ -55,15 +55,15 @@ class Stock:
         
         return self.__financial_ratios
 
-    def get_funcdamental_data(self, freq='Q'):
-        if self.__funcdamental_data is None or self.__funcdamental_data_freq != freq:
-            self.__funcdamental_data = pd.concat([
+    def get_fundamental_data(self, freq='Q'):
+        if self.__fundamental_data is None or self.__fundamental_data_freq != freq:
+            self.__fundamental_data = pd.concat([
                 self.get_balance_sheet(freq),
                 self.get_income_statement(freq),
                 self.get_cash_flow_statement(freq),
                 self.get_financial_ratios(freq)
             ], axis=1)
-            self.__funcdamental_data_freq = freq
+            self.__fundamental_data_freq = freq
         
-        return self.__funcdamental_data
+        return self.__fundamental_data
 

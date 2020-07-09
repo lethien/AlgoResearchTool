@@ -11,7 +11,7 @@ class DataHandler:
         self.__assets = {}  
         self.__assets_codes = []  
 
-    def prepare_data(self, data_type, codes, columns, price_column, freq, verbose=False):   
+    def prepare_data(self, data_type, codes, columns, price_column, freq, get_fundamental=False, verbose=False):   
         for c in codes:
             if verbose:
                 print('{} {} - Start'.format(data_type, c))
@@ -32,8 +32,8 @@ class DataHandler:
 
             history_data = asset.get_history(freq)
 
-            if data_type == 'stock':
-                fundamental_data = asset.get_funcdamental_data()
+            if data_type == 'stock' and get_fundamental:
+                fundamental_data = asset.get_fundamental_data()
                 history_data = pd.concat([history_data, fundamental_data], axis=1)
 
             price_data = history_data[price_column].to_numpy()
