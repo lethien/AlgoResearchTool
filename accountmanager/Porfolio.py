@@ -3,12 +3,14 @@ import pandas as pd
 from . import performance_metrics
 
 class Porfolio:
-    def __init__(self, starting_capital):
+    def __init__(self, starting_capital, include_fee=False, fee_pct=0.005):
         self.__starting_capital = starting_capital
         self.__capital = starting_capital
         self.__holding = {}
         self.__value_history = []
         self.__trading_history = []
+        self.__include_fee = include_fee
+        self.__fee_pct = fee_pct
         
     def get_current_capital(self):
         return self.__capital
@@ -36,9 +38,7 @@ class Porfolio:
         return df.sort_index(ascending=True)
     
     def get_tickers_in_porfolio(self):
-        tickers = self.__holding.items()
-        
-        return pd.DataFrame(data=tickers)
+        return self.__holding
     
     def update_trading_history(self, date, ticker, quantity, price):
         if ticker not in self.__holding.keys():
@@ -48,19 +48,23 @@ class Porfolio:
         if (ticker_quantity + quantity) < 0:
             raise ValueError('Quantity of {} in porfolio: {}. Change quantity: {}. Update quantity will be negative.'.format(ticker, ticker_quantity, quantity))
 
-        capital = self.__capital
-        change_capital = quantity * price
+        capital = self.__capital        
+        change_capital =  quantity * price
+        fee = 0
+        if self.__include_fee:
+            fee = np.abs(change_capital * self.__fee_pct)
+            change_capital += fee
         if (capital - change_capital) < 0:
             raise ValueError('Capital in porfolio: {}. Change quantity: {}. Update quantity will be negative.'.format(capital, change_capital))
 
-        self.__trading_history.append((date, ticker, quantity))
+        self.__trading_history.append((date, ticker, quantity, fee))
         self.__holding[ticker] += quantity
         self.__capital -= change_capital
         return True
 
     def get_trading_history(self):
         df = pd.DataFrame(data = self.__trading_history)
-        df.columns = ['Date', 'Ticker', 'Quantity']
+        df.columns = ['Date', 'Ticker', 'Quantity', 'Fee']
         df = df.set_index(['Date'])
         return df.sort_index(ascending=True)
 
